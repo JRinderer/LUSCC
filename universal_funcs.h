@@ -120,6 +120,7 @@ token_types is_1d_token(char c){
   return t_type;
 }
 
+
 int string_match(char *str1, char *str2){
     unsigned int size1 = strlen(str1);
     unsigned int size2 = strlen(str2);
@@ -142,6 +143,27 @@ int string_match(char *str1, char *str2){
         return 1;
     }
 
+}
+
+token_types is_reserved_word(char *str){
+    int match=0;
+    match = string_match(str,"if");
+    if(match==1){
+        return IF;
+    }
+    match = string_match(str,"else");
+    if(match==1) {
+        return ELSE;
+    }
+    match = string_match(str,"return");
+    if(match==1) {
+        return RETURN;
+    }
+    match = string_match(str,"void");
+    if(match==1) {
+        return VOID;
+    }
+    return NONE_T;
 }
 
 void freeStrings(char **strng){

@@ -36,7 +36,6 @@ void start_scanner(FILE *f){
             //first determine if the character is a token character
             //switch on the type of char
             switch (c_type) {
-
                 //we build a string type
                 case (LTR):
                     buff_size = stringBuilder(running_str, c);
