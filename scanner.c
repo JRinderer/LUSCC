@@ -37,6 +37,7 @@ void start_scanner(FILE *f){
                 //printf("NUM\n");
                 break;
             case(NONE_C):
+                //still an issue here as I'm missing some characters
                 c_type=is_spce(c);
                 if(c_type==SPC && running_str[0]!='\0'){
                     printf("%s\n",running_str);
@@ -54,9 +55,6 @@ void start_scanner(FILE *f){
                 curnt_state = DONE;
                 break;
         }
-
-        //determine what the char c could be
-
     }
 
 
