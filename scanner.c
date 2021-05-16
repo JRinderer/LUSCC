@@ -3,16 +3,11 @@
 //
 
 #include "scanner.h"
-//#include "global_defs.h"
 
 typedef enum
 {
     START,INASSIGN,INCOMMENT,INNUM,INID,DONE
 }state_type;
-
-
-
-
 
 //we pass the source code file after main validates there are no unusual or invalid characters
 void start_scanner(FILE *f){
@@ -27,6 +22,7 @@ void start_scanner(FILE *f){
         c=fgetc(f);
         //get char tyoe;
         char_type c_type;
+        token_types t_type;
         c_type = isLetter(c);
         //switch on the type of char
         switch(c_type){
@@ -51,6 +47,15 @@ void start_scanner(FILE *f){
 
                 //running_str = (char*)malloc(1 * sizeof(char));
                 //printf("tab or space\n");
+                break;
+            case(NONE_C):
+                //almost need to find a better way to deal with ( and other token characters!
+                printf("%s\n",running_str);
+                freeStrings(running_str);
+                running_str = (char *) calloc((buff_size+1),sizeof(char));
+                t_type = is_1d_token(c);
+                buff_size = stringBuilder(running_str,c);
+                printf("%s\n",running_str);
                 break;
             case(END):
                 printf("DONE\n");

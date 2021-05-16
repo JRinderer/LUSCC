@@ -29,13 +29,11 @@ int stringBuilder(char **strng, char c){
     strng = realloc(strng,size+1);
     strng = temp_pntr;
     return size2;
-
-
 }
 
 //remember chars in C start at 65 and run to 122
 char_type isLetter(char c){
-    int type=ERR;
+    int type=NONE_C;
     //this is a letter
     if(c >=65 && c<=122){
         type=LTR;
@@ -57,13 +55,8 @@ like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
 */
 
 token_types is_1d_token(char c){
-    /*
-    //reserved words
-    IF,ELSE, INT, RETURN, VOID, WHILE,
-            //symbols
-            PLUS,MINUS,TIMES,DIVIDE,LPAREN,RPAREN,LBRACKET,RBRACKET,LCURLY,RCURLY,SEMICOL,ASSIGN,EQL,NTEQL,COMMA, STCMT,ENCMT
-            */
-    int t_type = ERR;
+
+    int t_type = NONE_T;
     switch(c){
         case(43):
             t_type = PLUS;
@@ -108,7 +101,7 @@ token_types is_1d_token(char c){
         default:
             //consider alternative. It may not be an error because it could be a 2 dimensional operator.
             t_type = ERR;
-            break
+            break;
     }
   return t_type;
 }
