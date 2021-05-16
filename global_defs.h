@@ -20,7 +20,8 @@ typedef enum{
 
 
 typedef enum{
-    LTR,NUM
+    //SPC coves tab and space
+    LTR,NUM,TAB,SPC,ERR,END
 }char_type;
 
 //original source code
