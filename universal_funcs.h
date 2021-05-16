@@ -52,6 +52,75 @@ char_type isLetter(char c){
     return type;
 }
 
+/*the below are what I'm calling 1 dimensional tokes. They're all characters we can compare. Some things can't be compared
+like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
+*/
+
+toke_types is_1d_token(char c){
+    /*
+    //reserved words
+    IF,ELSE, INT, RETURN, VOID, WHILE,
+            //symbols
+            PLUS,MINUS,TIMES,DIVIDE,LPAREN,RPAREN,LBRACKET,RBRACKET,LCURLY,RCURLY,SEMICOL,ASSIGN,EQL,NTEQL,COMMA, STCMT,ENCMT
+            */
+    int t_type = ERR;
+    switch(c){
+        case(43):
+            t_type = PLUS;
+            break;
+        case(32):
+            t_type = TIMES;
+            break;
+        case(47):
+            t_type = DIVIDE;
+            break;
+        case(45):
+            t_type = MINUS;
+            break;
+        case(40):
+            t_type = LPAREN;
+            break;
+        case(41):
+            t_type = RPAREN;
+            break;
+        case(91):
+            t_type = LBRACKET;
+            break;
+        case(93):
+            t_type = RBRACKET;
+            break;
+        case(123):
+            t_type = LCURLY;
+            break;
+        case(125):
+            t_type = RCURLY;
+            break;
+        case(59):
+            t_type = SEMICOL;
+            break;
+        case(61):
+            //this is = we need to think about how to deal with == for equality tests! but it won't be in here
+            t_type = ASSIGN;
+            break;
+        case(44):
+            t_type = COMMA;
+            break;
+        default:
+            //consider alternative. It may not be an error because it could be a 2 dimensional operator.
+            t_type = ERR;
+            break
+    }
+    if(c == 43){
+        t_type = PLUS;
+    }else if(c == 32){
+        t_type = TIMES;
+    }else if(c==47){
+        t_type = DIVIDE;
+    }else if(c == 45){
+        t_type = MINUS;
+    }else if
+}
+
 void freeStrings(char **strng){
     free(strng);
     //strng = NULL;
