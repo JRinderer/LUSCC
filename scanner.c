@@ -50,12 +50,15 @@ void start_scanner(FILE *f){
                 break;
             case(NONE_C):
                 //almost need to find a better way to deal with ( and other token characters!
+                //we're close but I'm priting spaces to terminal. I want to avoid this
                 printf("%s\n",running_str);
                 freeStrings(running_str);
                 running_str = (char *) calloc((buff_size+1),sizeof(char));
                 t_type = is_1d_token(c);
                 buff_size = stringBuilder(running_str,c);
                 printf("%s\n",running_str);
+                freeStrings(running_str);
+                running_str = (char *) calloc((buff_size+1),sizeof(char));
                 break;
             case(END):
                 printf("DONE\n");
