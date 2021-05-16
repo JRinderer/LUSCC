@@ -1,6 +1,6 @@
-#Notes: 5/15/2021 - JRinderer
+# Notes: 5/15/2021 - JRinderer
 
-##Summary: 
+## Summary: 
 Using a few books, and open source resources I'm going to build a simple C compiler. The language will be C,
 but with some features removed. There will be no structs, pointers, enum, and no header files can be imported as in
 standard C. It will be a very primitive C programming langage I'll call SC; or Simple C.
@@ -10,7 +10,7 @@ will be X86_64 Assembly. There will be three primary programs written: scanner, 
 nasm for Assembly, and CLANG or GCC for C compiling. While I'm building mine in FreeBSD I will have an Ubuntu Virtual
 Machine to run students code.
 
-##Steps to get started
+## Steps to get started
 
 1. Define the language
 2. Examine the language definition
@@ -18,11 +18,11 @@ Machine to run students code.
 4. Build the parser
 5. Build the code_gen
 
-##General Rules
+## General Rules
 Our Simple C language will require a main funciton. This function must be declared VOID. It's position must be the last
 function in our file.
 
-##The Scanner
+## The Scanner
 The scanner is one of the most important parts of the programming; it runs through our source code and generates tokens
 for us. There are a variety of approaches to building the scanner, the one I'll use will create a .scn file. This .scn
 file will then be passed to the parser to validate that it's correct. This isn't the ideal way, but it my opinion for
