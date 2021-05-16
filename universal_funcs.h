@@ -56,7 +56,7 @@ char_type isLetter(char c){
 like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
 */
 
-toke_types is_1d_token(char c){
+token_types is_1d_token(char c){
     /*
     //reserved words
     IF,ELSE, INT, RETURN, VOID, WHILE,
@@ -110,15 +110,7 @@ toke_types is_1d_token(char c){
             t_type = ERR;
             break
     }
-    if(c == 43){
-        t_type = PLUS;
-    }else if(c == 32){
-        t_type = TIMES;
-    }else if(c==47){
-        t_type = DIVIDE;
-    }else if(c == 45){
-        t_type = MINUS;
-    }else if
+  return t_type;
 }
 
 void freeStrings(char **strng){
