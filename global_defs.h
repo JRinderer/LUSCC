@@ -18,6 +18,11 @@ typedef enum{
     PLUS,MINUS,TIMES,DIVIDE,LPAREN,RPAREN,LBRACKET,RBRACKET,LCURLY,RCURLY,SEMICOL, ASSIGN,EQL,NTEQL,COMMA, STCMT,ENCMT
 }token_types;
 
+
+typedef enum{
+    LTR,NUM
+}char_type;
+
 //original source code
 extern FILE* src_code;
 //output from scanner

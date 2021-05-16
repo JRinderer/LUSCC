@@ -33,6 +33,15 @@ void stringBuilder(char **strng, char c){
 
 }
 
+//remember chars in C start at 65 and run to 122
+char_type isLetter(char c){
+    int type=NUM;
+    if(c >=65 && c<=122){
+        type=LTR;
+    }
+    return type;
+}
+
 void freeStrings(char **strng){
     free(strng);
 }

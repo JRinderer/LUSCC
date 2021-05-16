@@ -25,8 +25,6 @@ universal_funcs.h
 /home/jrinder/LUSCC/scanner.c
 scanner.h
 /home/jrinder/LUSCC/scanner.h
-global_defs.h
-/home/jrinder/LUSCC/global_defs.h
 
 /home/jrinder/LUSCC/scanner.h
 global_defs.h

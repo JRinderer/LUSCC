@@ -18,6 +18,10 @@ Machine to run students code.
 4. Build the parser
 5. Build the code_gen
 
+##General Rules
+Our Simple C language will require a main funciton. This function must be declared VOID. It's position must be the last
+function in our file.
+
 ##The Scanner
 The scanner is one of the most important parts of the programming; it runs through our source code and generates tokens
 for us. There are a variety of approaches to building the scanner, the one I'll use will create a .scn file. This .scn

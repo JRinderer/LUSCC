@@ -11,5 +11,4 @@ void main(void){
     int x; int y;
     x = input(); y = input();
     output(gcd(x,y);
-
 }

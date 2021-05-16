@@ -3,22 +3,44 @@
 //
 
 #include "scanner.h"
-#include "global_defs.h"
+//#include "global_defs.h"
+
+typedef enum
+{
+    START,INASSIGN,INCOMMENT,INNUM,INID,DONE
+}state_type;
+
+
+
 
 
 //we pass the source code file after main validates there are no unusual or invalid characters
 void start_scanner(FILE *f){
     char *running_str = (char*)malloc(0 * sizeof(char));
-    char current_c = 'c';
-    stringBuilder(running_str,current_c); //this function is in universal_funcs.h
-    current_c = 'a';
-    stringBuilder(running_str,current_c);
-    current_c = 'k';
-    stringBuilder(running_str,current_c);
-    current_c = 'e';
-    stringBuilder(running_str,current_c);
-    printf("The current string is:%s",running_str);
-    
-    freeStrings(running_str); //at the end of the scanner free any memory used by string
+    char c;
+    state_type curnt_state = START;
+    //first step to read in a char add in error checking
+    //while the state is not DONE
+    while(curnt_state != DONE){
+        c=fgetc(f);
+        //get char tyoe;
+        char_type c_type;
+        c_type = isLetter(c);
+        //switch on the type of char
+        switch(c_type){
+            //we build a string type
+            case(LTR):
+                stringBuilder(running_str,c);
+                break;
+            //we build a num type
+            case(NUM):
+                printf("no go");
+                break;
+        }
+        curnt_state = DONE;
+        //determine what the char c could be
+
+    }
+
 
 }
