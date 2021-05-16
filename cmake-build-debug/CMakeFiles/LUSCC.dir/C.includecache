@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/jrinder/LUSCC/global_defs.h
+/home/jrinder/CLionProjects/LUSCC/global_defs.h
 stdio.h
 -
 stdlib.h
 -
 
-/home/jrinder/LUSCC/scanner.c
+/home/jrinder/CLionProjects/LUSCC/scanner.c
 scanner.h
-/home/jrinder/LUSCC/scanner.h
+/home/jrinder/CLionProjects/LUSCC/scanner.h
 
-/home/jrinder/LUSCC/scanner.h
+/home/jrinder/CLionProjects/LUSCC/scanner.h
 global_defs.h
-/home/jrinder/LUSCC/global_defs.h
+/home/jrinder/CLionProjects/LUSCC/global_defs.h
 

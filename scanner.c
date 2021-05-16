@@ -4,6 +4,7 @@
 
 #include "scanner.h"
 
+
 typedef enum
 {
     START,INASSIGN,INCOMMENT,INNUM,INID,DONE
@@ -35,30 +36,18 @@ void start_scanner(FILE *f){
             case(NUM):
                 //printf("NUM\n");
                 break;
-            //A TAB or SAPCE has been reached
-            //this indicates the end, but once we include strings that isn't the case
-            case(SPC):
-                printf("%s\n",running_str);
-                //free memory
-                freeStrings(running_str);
-                //free(running_str);
-                //reallocate memory for next;
-                running_str = (char *) calloc((buff_size+1),sizeof(char));
-
-                //running_str = (char*)malloc(1 * sizeof(char));
-                //printf("tab or space\n");
-                break;
             case(NONE_C):
-                //almost need to find a better way to deal with ( and other token characters!
-                //we're close but I'm priting spaces to terminal. I want to avoid this
-                printf("%s\n",running_str);
-                freeStrings(running_str);
-                running_str = (char *) calloc((buff_size+1),sizeof(char));
-                t_type = is_1d_token(c);
-                buff_size = stringBuilder(running_str,c);
-                printf("%s\n",running_str);
-                freeStrings(running_str);
-                running_str = (char *) calloc((buff_size+1),sizeof(char));
+                c_type=is_spce(c);
+                if(c_type==SPC && running_str[0]!='\0'){
+                    printf("%s\n",running_str);
+                    freeStrings(running_str);
+                    running_str = (char *) calloc((buff_size+1),sizeof(char));
+                }else if(running_str[0]!='\0'){
+                    printf("%s\n", running_str);
+                    freeStrings(running_str);
+                    running_str = (char *) calloc((buff_size + 1), sizeof(char));
+                    printf("%c\n", c);
+                }
                 break;
             case(END):
                 printf("DONE\n");

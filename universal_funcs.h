@@ -37,15 +37,20 @@ char_type isLetter(char c){
     //this is a letter
     if(c >=65 && c<=122){
         type=LTR;
-    //this is a space, or other seperator
-    }else if(c == 32 || c==9){
-        type=SPC;
     //this is an END OF FIELD
     }else if(c==EOF){
         type=END;
     //this is a number
     }else if(c >=48 && c <=57){
         type=NUM;
+    }
+    return type;
+}
+
+char_type is_spce(char c){
+    int type= NONE_C;
+    if(c ==32 || c==9) {
+        type = SPC;
     }
     return type;
 }
@@ -61,7 +66,7 @@ token_types is_1d_token(char c){
         case(43):
             t_type = PLUS;
             break;
-        case(32):
+        case(42):
             t_type = TIMES;
             break;
         case(47):
@@ -98,12 +103,42 @@ token_types is_1d_token(char c){
         case(44):
             t_type = COMMA;
             break;
+        case(32):
+            t_type = IGN;
+            break;
+        case(9):
+            t_type = IGN;
+            break;
         default:
             //consider alternative. It may not be an error because it could be a 2 dimensional operator.
             t_type = ERR;
             break;
     }
   return t_type;
+}
+
+int string_match(char *str1, char *str2){
+    unsigned int size1 = strlen(str1);
+    unsigned int size2 = strlen(str2);
+
+    int i=0; int j =0;
+
+
+    if(size1 != size2){
+        return 0;
+    }
+
+    while(str1[i]!='\0'){
+        if(str1[i]==str2[i]){
+            j++;
+        }
+        i++;
+    }
+
+    if(j == size1){
+        return 1;
+    }
+
 }
 
 void freeStrings(char **strng){
