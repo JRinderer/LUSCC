@@ -38,6 +38,9 @@ char_type isLetter(char c){
     if(c >=65 && c<=122){
         type=LTR;
     //this is an END OF FIELD
+    }else if(c == 32 || c==9){
+        type=SPC;
+        //this is an END OF FIELD
     }else if(c==EOF){
         type=END;
     //this is a number
@@ -111,7 +114,7 @@ token_types is_1d_token(char c){
             break;
         default:
             //consider alternative. It may not be an error because it could be a 2 dimensional operator.
-            t_type = ERR;
+            t_type = NONE_T;
             break;
     }
   return t_type;

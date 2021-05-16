@@ -24,36 +24,45 @@ void start_scanner(FILE *f){
         //get char tyoe;
         char_type c_type;
         token_types t_type;
-        c_type = isLetter(c);
-        //switch on the type of char
-        switch(c_type){
-            //we build a string type
-            case(LTR):
-                buff_size = stringBuilder(running_str,c);
-                //printf("LTR\n");
-                break;
-            //we build a num type
-            case(NUM):
-                //printf("NUM\n");
-                break;
-            case(NONE_C):
-                //still an issue here as I'm missing some characters
-                c_type=is_spce(c);
-                if(c_type==SPC && running_str[0]!='\0'){
+        t_type = is_1d_token(c);
+        if(t_type != NONE_T && t_type != IGN){
+            //indicates we have a token character
+            buff_size = stringBuilder(running_str,c);
+            printf("%s\n",running_str);
+            freeStrings(running_str);
+            running_str = (char *) calloc((buff_size+1),sizeof(char));
+        }else {
+            c_type = isLetter(c);
+            //first determine if the character is a token character
+            //switch on the type of char
+            switch (c_type) {
+
+                //we build a string type
+                case (LTR):
+                    buff_size = stringBuilder(running_str, c);
+                    //printf("LTR\n");
+                    break;
+                    //we build a num type
+                case(SPC):
                     printf("%s\n",running_str);
+                    //free memory
                     freeStrings(running_str);
+                    //free(running_str);
+                    //reallocate memory for next;
                     running_str = (char *) calloc((buff_size+1),sizeof(char));
-                }else if(running_str[0]!='\0'){
-                    printf("%s\n", running_str);
-                    freeStrings(running_str);
-                    running_str = (char *) calloc((buff_size + 1), sizeof(char));
-                    printf("%c\n", c);
-                }
-                break;
-            case(END):
-                printf("DONE\n");
-                curnt_state = DONE;
-                break;
+
+                    //running_str = (char*)malloc(1 * sizeof(char));
+                    //printf("tab or space\n");
+                    break;
+                case (NUM):
+                    buff_size = stringBuilder(running_str, c);
+                    //printf("NUM\n");
+                    break;
+                case (END):
+                    printf("DONE\n");
+                    curnt_state = DONE;
+                    break;
+            }
         }
     }
 

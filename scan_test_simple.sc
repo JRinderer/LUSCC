@@ -1,1 +1,1 @@
-gcd(int u, int v){
+if(v==0){
