@@ -36,3 +36,11 @@ token or lexeme) is either a keyword, or a lexem. Think of this as a key value p
 What's the best way to approach building Token Lexeme? Step 1 is to loop through every character. This has been completed.
 The next step is to build each character into a string pointer. Currently I'm comparing characters to characters for some things,
 but the best approach may be to build each character into a string and then compare to another string.
+
+The question becomes when we de stop adding to the buffer?
+1. When the buffer contains a token, and the look ahead identifies the next character won't change that.
+2. When the buffer contains an identifier and the look ahead identifies the next character is:
+    * space
+    * a reserved character
+    * a tab
+    * a line ender

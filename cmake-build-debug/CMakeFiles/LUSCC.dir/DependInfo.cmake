@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/jrinder/CLionProjects/LUSCC/main.c" "/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/main.c.o"
-  "/home/jrinder/CLionProjects/LUSCC/scanner.c" "/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/scanner.c.o"
+  "/home/jrinder/LUSCC/main.c" "/home/jrinder/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/main.c.o"
+  "/home/jrinder/LUSCC/scanner.c" "/home/jrinder/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/scanner.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

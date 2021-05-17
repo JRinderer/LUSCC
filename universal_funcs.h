@@ -62,9 +62,7 @@ char_type is_spce(char c){
 like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
 */
 
-
-
-token_types is_1d_token(char c){
+token_types is_char_token(char c){
 
     token_types t_type = NONE_T;
     switch(c){
@@ -109,10 +107,10 @@ token_types is_1d_token(char c){
             t_type = COMMA;
             break;
         case(32):
-            t_type = IGN;
+            t_type = NONE_T;
             break;
         case(9):
-            t_type = IGN;
+            t_type = NONE_T;
             break;
         default:
             //consider alternative. It may not be an error because it could be a 2 dimensional operator.
