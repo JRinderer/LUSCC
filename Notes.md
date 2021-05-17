@@ -31,3 +31,8 @@ and confirm it's correct it makes debugging better.
 
 The scanner will use the global_defs token_types to check that each "string" (a combination of chars to create a unique
 token or lexeme) is either a keyword, or a lexem. Think of this as a key value pair.
+
+###Working scanner notes:
+What's the best way to approach building Token Lexeme? Step 1 is to loop through every character. This has been completed.
+The next step is to build each character into a string pointer. Currently I'm comparing characters to characters for some things,
+but the best approach may be to build each character into a string and then compare to another string.
