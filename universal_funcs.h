@@ -62,9 +62,11 @@ char_type is_spce(char c){
 like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
 */
 
+
+
 token_types is_1d_token(char c){
 
-    int t_type = NONE_T;
+    token_types t_type = NONE_T;
     switch(c){
         case(43):
             t_type = PLUS;
@@ -121,6 +123,7 @@ token_types is_1d_token(char c){
 }
 
 
+
 int string_match(char *str1, char *str2){
     unsigned int size1 = strlen(str1);
     unsigned int size2 = strlen(str2);
@@ -142,6 +145,100 @@ int string_match(char *str1, char *str2){
     if(j == size1){
         return 1;
     }
+
+}
+
+token_types is_token(char *str){
+    token_types t_type = NONE_T;
+    int match = 0;
+
+    match = string_match(str,"+");
+    if(match==1){
+        return PLUS;
+    }
+
+    match = string_match(str,"-");
+    if(match==1){
+        return MINUS;
+    }
+    match = string_match(str,"/");
+    if(match==1){
+        return DIVIDE;
+    }
+    match = string_match(str,"*");
+    if(match==1){
+        return TIMES;
+    }
+    match = string_match(str,"(");
+    if(match==1){
+        return LPAREN;
+    }
+    match = string_match(str,")");
+    if(match==1){
+        return RPAREN;
+    }
+    match = string_match(str,"[");
+    if(match==1){
+        return LBRACKET;
+    }
+    match = string_match(str,"]");
+    if(match==1){
+        return RBRACKET;
+    }
+    match = string_match(str,"{");
+    if(match==1){
+        return LCURLY;
+    }
+    match = string_match(str,"}");
+    if(match==1){
+        return RCURLY;
+    }
+    match = string_match(str,"=");
+    if(match==1){
+        return ASSIGN;
+    }
+    match = string_match(str,"==");
+    if(match==1){
+        return EQL;
+    }
+    match = string_match(str,"!=");
+    if(match==1){
+        return NTEQL;
+    }
+    match = string_match(str,";");
+    if(match==1){
+        return SEMICOL;
+    }
+    match = string_match(str,",");
+    if(match==1){
+        return COMMA;
+    }
+    match = string_match(str,"//");
+    if(match==1){
+        return LNCMT;
+    }
+    match = string_match(str,"int");
+    if(match==1){
+        return INT;
+    }
+    match = string_match(str,"else");
+    if(match==1){
+        return ELSE;
+    }
+    match = string_match(str,"if");
+    if(match==1){
+        return IF;
+    }
+    match = string_match(str,"return");
+    if(match==1){
+        return RETURN;
+    }
+    match = string_match(str,"void");
+    if(match==1){
+        return VOID;
+    }
+
+    return t_type;
 
 }
 

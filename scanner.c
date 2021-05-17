@@ -22,16 +22,26 @@ void start_scanner(FILE *f){
     while(curnt_state != DONE){
         c=fgetc(f);
         //get char tyoe;
-        char_type c_type;
-        
-        running_str = (char *) calloc((buff_size+1),sizeof(char));
-        //
-        buff_size = stringBuilder(running_str,c);
-        //free and reallocate
-        freeStrings(running_str);
-        running_str = (char *) calloc((buff_size+1),sizeof(char));
-        token_types t_type;
-        t_type = is_1d_token(c);
+
+        if(c != ' ' || c != '\t'){
+            buff_size = stringBuilder(running_str,c);
+        }
+
+        if(is_token(running_str)!=NONE_T){
+            printf(running_str);
+            freeStrings(running_str);
+            running_str = (char *) calloc((buff_size+1),sizeof(char));
+            token_types t_type;
+
+        }else if(c==' ' || c == '\t'){
+            printf(running_str);
+            freeStrings(running_str);
+            running_str = (char *) calloc((buff_size+1),sizeof(char));
+            token_types t_type;
+        }
+        if(c==EOF){
+            curnt_state=DONE;
+        }
 
 
     }
