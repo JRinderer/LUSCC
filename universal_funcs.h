@@ -135,12 +135,14 @@ int string_match(char *str1, char *str2){
 
     while(str1[i]!='\0'){
         if(str1[i]==str2[i]){
-            j++;
+            j=1;
+        }else{
+            j=0;
         }
         i++;
     }
 
-    if(j == size1){
+    if(j > 0){
         return 1;
     }
 

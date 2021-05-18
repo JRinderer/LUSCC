@@ -24,7 +24,7 @@ int is_token_or_reserved(char **str, int size){
 
 int is_identif(char **str, int size){
     if(is_token(str)==NONE_T){
-        printf("%s\t\t%s\n",str,str);
+        printf("IDENIT\t\t%s\n",str);
         freeStrings(str);
         str = (char *) calloc((size+1),sizeof(char));
         token_types t_type;
