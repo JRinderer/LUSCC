@@ -21,7 +21,7 @@ int is_token_or_reserved(char **str, int size){
     }
     return 0;
 }
-
+//identif right now is coming back as number of variables. This isn't accurate, but we're close
 int is_identif(char **str, int size){
     if(is_token(str)==NONE_T){
         printf("IDENIT\t\t%s\n",str);
