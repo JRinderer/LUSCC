@@ -53,10 +53,12 @@ int look_ahead(FILE *f, char **buffer){
         is_identif(buffer,buff_size);
     }
 
+    if(c==EOF){
+        return EOF;
+    }
+
     fseek(f,-1L,SEEK_CUR);
 }
-
-
 
 //we pass the source code file after main validates there are no unusual or invalid characters
 void start_scanner(FILE *f){
@@ -71,7 +73,7 @@ void start_scanner(FILE *f){
         c=fgetc(f);
         buff_size = stringBuilder(running_str,c);
         buff_size = look_ahead(f,running_str);
-        if(c==EOF){
+        if(c==EOF || buff_size==EOF){
             curnt_state=DONE;
         }
 
