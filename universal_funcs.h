@@ -135,9 +135,10 @@ int string_match(char *str1, char *str2){
 
     while(str1[i]!='\0'){
         if(str1[i]==str2[i]){
-            j=1;
+            j++;
         }else{
             j=0;
+            return 0;
         }
         i++;
     }
@@ -145,6 +146,7 @@ int string_match(char *str1, char *str2){
     if(j > 0){
         return 1;
     }
+
 
 }
 
@@ -235,7 +237,7 @@ token_types is_token(char *str){
     }
     match = string_match(str,"void");
     if(match==1){
-        return VOID;
+        return NONE_T;
     }
 
     return t_type;

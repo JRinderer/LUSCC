@@ -42,7 +42,7 @@ int look_ahead(FILE *f, char **buffer){
 
     tk_type = is_char_token(c);
     //almost working, but need to figure out 2d operators like ==
-    while(tk_type == NONE_T && is_token(buffer)==NONE_T) {
+    while(tk_type == NONE_T && is_token(buffer)==NONE_T && c!=EOF) {
         buff_size = stringBuilder(buffer, c);
         c = fgetc(f);
         tk_type = is_char_token(c);
@@ -69,10 +69,12 @@ void start_scanner(FILE *f){
     state_type curnt_state = START;
     //first step to read in a char add in error checking
     //while the state is not DONE
-    while(curnt_state != DONE){
-        c=fgetc(f);
-        buff_size = stringBuilder(running_str,c);
-        buff_size = look_ahead(f,running_str);
+    while(curnt_state != DONE) {
+        c = fgetc(f);
+        if (c != ' ' && c != '\n') {
+            buff_size = stringBuilder(running_str, c);
+            buff_size = look_ahead(f, running_str);
+        }
         if(c==EOF || buff_size==EOF){
             curnt_state=DONE;
         }
