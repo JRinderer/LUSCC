@@ -235,6 +235,14 @@ token_types is_token(char *str){
     if(match==1){
         return RETURN;
     }
+    match = string_match(str,"input");
+    if(match==1){
+        return INPUT;
+    }
+    match = string_match(str,"output");
+    if(match==1){
+        return OUTPUT;
+    }
     match = string_match(str,"void");
     if(match==1){
         return NONE_T;
