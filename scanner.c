@@ -4,66 +4,86 @@
 
 #include "scanner.h"
 
+typedef enum {
+    START, INASSIGN, INCOMMENT, INNUM, INID, DONE
+} state_type;
 
-typedef enum
-{
-    START,INASSIGN,INCOMMENT,INNUM,INID,DONE
-}state_type;
+
+int is_token_or_reserved(char **str, int size) {
+    if (is_token(str) != NONE_T) {
+        printf("%s\t\t%s\n", str, str);
+        freeStrings(str);
+        str = (char *) calloc((size + 1), sizeof(char));
+        token_types t_type;
+        return 1;
+    }
+    return 0;
+}
+
+//identif right now is coming back as number of variables. This isn't accurate, but we're close
+int is_identif(char **str, int size) {
+    if (is_token(str) == NONE_T) {
+        printf("IDENIT\t\t%s\n", str);
+        freeStrings(str);
+        str = (char *) calloc((size + 1), sizeof(char));
+        token_types t_type;
+        return 1;
+    }
+    return 0;
+}
+
+int look_ahead(FILE *f, char **buffer) {
+    char c;
+    //get next char;
+    c = fgetc(f);
+    token_types tk_type;
+    int buff_size;
+
+    tk_type = is_char_token(c);
+    //almost working, but need to figure out 2d operators like ==
+    int match = 0;
+    match = string_match(buffer, "=");
+    if (c == '=' && match == 1) {
+        buff_size = stringBuilder(buffer, c);
+
+    } else {
+        while (tk_type == NONE_T && is_token(buffer) == NONE_T && c != EOF) {
+            buff_size = stringBuilder(buffer, c);
+            c = fgetc(f);
+            tk_type = is_char_token(c);
+        }
+        //only rewind pointer when we've built more than a 2d reserved word
+        fseek(f, -1L, SEEK_CUR);
+    }
+    int holder = 0;
+    holder = is_token_or_reserved(buffer, buff_size);
+    if (holder == 0) {
+        is_identif(buffer, buff_size);
+    }
+
+    if (c == EOF) {
+        return EOF;
+    }
+}
 
 //we pass the source code file after main validates there are no unusual or invalid characters
-void start_scanner(FILE *f){
-    char *running_str = (char*)malloc(0 * sizeof(char));
+void start_scanner(FILE *f) {
+    char *running_str = (char *) malloc(0 * sizeof(char));
     int buff_size;
     char c;
 
     state_type curnt_state = START;
     //first step to read in a char add in error checking
     //while the state is not DONE
-    while(curnt_state != DONE){
-        c=fgetc(f);
-        //get char tyoe;
-        char_type c_type;
-        token_types t_type;
-        t_type = is_1d_token(c);
-        if(t_type != NONE_T && t_type != IGN){
-            //indicates we have a token character
-            buff_size = stringBuilder(running_str,c);
-            printf("%s\n",running_str);
-            freeStrings(running_str);
-            running_str = (char *) calloc((buff_size+1),sizeof(char));
-        }else {
-            c_type = isLetter(c);
-            //first determine if the character is a token character
-            //switch on the type of char
-            switch (c_type) {
-                //we build a string type
-                case (LTR):
-                    buff_size = stringBuilder(running_str, c);
-                    //printf("LTR\n");
-                    break;
-                    //we build a num type
-                case(SPC):
-                    printf("%s\n",running_str);
-                    //free memory
-                    freeStrings(running_str);
-                    //free(running_str);
-                    //reallocate memory for next;
-                    running_str = (char *) calloc((buff_size+1),sizeof(char));
-
-                    //running_str = (char*)malloc(1 * sizeof(char));
-                    //printf("tab or space\n");
-                    break;
-                case (NUM):
-                    buff_size = stringBuilder(running_str, c);
-                    //printf("NUM\n");
-                    break;
-                case (END):
-                    printf("DONE\n");
-                    curnt_state = DONE;
-                    break;
-            }
+    while (curnt_state != DONE) {
+        c = fgetc(f);
+        if (c != ' ' && c != '\n') {
+            buff_size = stringBuilder(running_str, c);
+            buff_size = look_ahead(f, running_str);
         }
+        if (c == EOF || buff_size == EOF) {
+            curnt_state = DONE;
+        }
+
     }
-
-
 }

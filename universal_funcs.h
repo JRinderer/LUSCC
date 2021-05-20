@@ -62,9 +62,9 @@ char_type is_spce(char c){
 like == != >= <= <>. These are similar to the 2d operators I had in KLUMP
 */
 
-token_types is_1d_token(char c){
+token_types is_char_token(char c){
 
-    int t_type = NONE_T;
+    token_types t_type = NONE_T;
     switch(c){
         case(43):
             t_type = PLUS;
@@ -107,10 +107,10 @@ token_types is_1d_token(char c){
             t_type = COMMA;
             break;
         case(32):
-            t_type = IGN;
+            t_type = NONE_T;
             break;
         case(9):
-            t_type = IGN;
+            t_type = NONE_T;
             break;
         default:
             //consider alternative. It may not be an error because it could be a 2 dimensional operator.
@@ -119,6 +119,7 @@ token_types is_1d_token(char c){
     }
   return t_type;
 }
+
 
 
 int string_match(char *str1, char *str2){
@@ -135,13 +136,119 @@ int string_match(char *str1, char *str2){
     while(str1[i]!='\0'){
         if(str1[i]==str2[i]){
             j++;
+        }else{
+            j=0;
+            return 0;
         }
         i++;
     }
 
-    if(j == size1){
+    if(j > 0){
         return 1;
     }
+
+
+}
+
+token_types is_token(char *str){
+    token_types t_type = NONE_T;
+    int match = 0;
+
+    match = string_match(str,"+");
+    if(match==1){
+        return PLUS;
+    }
+
+    match = string_match(str,"-");
+    if(match==1){
+        return MINUS;
+    }
+    match = string_match(str,"/");
+    if(match==1){
+        return DIVIDE;
+    }
+    match = string_match(str,"*");
+    if(match==1){
+        return TIMES;
+    }
+    match = string_match(str,"(");
+    if(match==1){
+        return LPAREN;
+    }
+    match = string_match(str,")");
+    if(match==1){
+        return RPAREN;
+    }
+    match = string_match(str,"[");
+    if(match==1){
+        return LBRACKET;
+    }
+    match = string_match(str,"]");
+    if(match==1){
+        return RBRACKET;
+    }
+    match = string_match(str,"{");
+    if(match==1){
+        return LCURLY;
+    }
+    match = string_match(str,"}");
+    if(match==1){
+        return RCURLY;
+    }
+    match = string_match(str,"=");
+    if(match==1){
+        return ASSIGN;
+    }
+    match = string_match(str,"==");
+    if(match==1){
+        return EQL;
+    }
+    match = string_match(str,"!=");
+    if(match==1){
+        return NTEQL;
+    }
+    match = string_match(str,";");
+    if(match==1){
+        return SEMICOL;
+    }
+    match = string_match(str,",");
+    if(match==1){
+        return COMMA;
+    }
+    match = string_match(str,"//");
+    if(match==1){
+        return LNCMT;
+    }
+    match = string_match(str,"int");
+    if(match==1){
+        return INT;
+    }
+    match = string_match(str,"else");
+    if(match==1){
+        return ELSE;
+    }
+    match = string_match(str,"if");
+    if(match==1){
+        return IF;
+    }
+    match = string_match(str,"return");
+    if(match==1){
+        return RETURN;
+    }
+    match = string_match(str,"input");
+    if(match==1){
+        return INPUT;
+    }
+    match = string_match(str,"output");
+    if(match==1){
+        return OUTPUT;
+    }
+    match = string_match(str,"void");
+    if(match==1){
+        return NONE_T;
+    }
+
+    return t_type;
 
 }
 
