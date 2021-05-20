@@ -70,4 +70,6 @@ identif  x
 )        )
 {        {
 
-And if that's the case, how far down do we want to track that?
+And if that's the case, how far down do we want to track that? It might be possible to hanlde this in the parser.
+However it might also make the parsers job easier if the scanner can identify functions for it and label; perhaps even
+going as far as labeling the start of a function, and the end;
