@@ -44,3 +44,30 @@ The question becomes when we de stop adding to the buffer?
     * a reserved character
     * a tab
     * a line ender
+   
+####How best to handle functions:
+In short how do we write our scanner to effectively identify a fuction vs a variable? 
+
+A variable is declared like this:
+int x; 
+
+Optionally it can also look like this
+int x=0;
+
+A funciton on the other hand will look like this:
+
+int func(){
+
+An interesting challenge is, do we want the scanner to identify in some way that we have a function.
+Something like the following:
+
+func     func
+int      int
+gcd      gcd
+(        (
+int      int
+identif  x
+)        )
+{        {
+
+And if that's the case, how far down do we want to track that?
