@@ -45,6 +45,7 @@ int is_numeric(char **str, int size){
     return 0;
 }
 
+//need to consider how to handle comments in code. Look ahead for / could be simply division or a comment!
 int look_ahead_num(FILE *f, char **buffer) {
     char c;
     //get next char;
