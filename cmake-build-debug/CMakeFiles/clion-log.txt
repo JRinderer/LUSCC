@@ -1,10 +1,4 @@
-/manual_sorce/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/jrinder/LUSCC
--- The C compiler identification is Clang 10.0.1
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
+/home/jrinder/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/jrinder/CLionProjects/LUSCC
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/jrinder/LUSCC/cmake-build-debug
+-- Build files have been written to: /home/jrinder/CLionProjects/LUSCC/cmake-build-debug
