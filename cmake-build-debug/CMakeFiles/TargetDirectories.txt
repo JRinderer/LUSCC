@@ -1,3 +1,0 @@
-/home/jrinder/LUSCC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/jrinder/LUSCC/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/jrinder/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir

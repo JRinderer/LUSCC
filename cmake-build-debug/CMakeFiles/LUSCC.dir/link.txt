@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/LUSCC.dir/main.c.o CMakeFiles/LUSCC.dir/scanner.c.o -o LUSCC 
