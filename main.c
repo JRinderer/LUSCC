@@ -4,7 +4,6 @@
 #include "universal_funcs.h"
 
 int main(int argc, char *argv[]) {
-    printf("Hello, World!\n");
     FILE *filePtr;
     //-----process cmd args
     switch (argc) {

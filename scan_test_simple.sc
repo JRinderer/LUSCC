@@ -1,1 +1,1 @@
-if(v==0){
+if(int i, int x){
