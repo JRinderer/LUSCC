@@ -4,7 +4,6 @@
 #include "universal_funcs.h"
 
 int main(int argc, char *argv[]) {
-    printf("Hello, World!\n");
     FILE *filePtr;
     //-----process cmd args
     switch (argc) {
@@ -22,7 +21,7 @@ int main(int argc, char *argv[]) {
             exit(0);
 
     }
-
+    
     //----end of cmd process---
 
     //----check if file is empty
