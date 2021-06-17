@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
             exit(0);
 
     }
+
     //----end of cmd process---
 
     //----check if file is empty
@@ -32,7 +33,7 @@ int main(int argc, char *argv[]) {
     char tempStr[MAX];
 
     int i;
- 
+
     int isValid = 1; //1 is true
     //loop through file
     while ((c=fgetc(filePtr))!= EOF){

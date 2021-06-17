@@ -5,6 +5,8 @@
 #ifndef LUSCC_UNIVERSAL_FUNCS_H
 #define LUSCC_UNIVERSAL_FUNCS_H
 
+#include <ctype.h>
+
 int isExAcceptableChar(char c) {
     if (c == '.' || c == '(' || c == ')' || c == ',' || c =='{' || c == '}' ||
         c == ';' || c == '[' || c == ']' ||
@@ -120,6 +122,17 @@ token_types is_char_token(char c){
   return t_type;
 }
 
+char_type is_num(char *str){
+    for (int i = 0; i < strlen(str); ++i) {
+        if(str[i] <48 || str[i]>57){
+            return NONE_C;
+        }
+        else{
+            return NUM;
+        }
+    }
+}
+
 
 
 int string_match(char *str1, char *str2){
@@ -135,9 +148,10 @@ int string_match(char *str1, char *str2){
 
     while(str1[i]!='\0'){
         if(str1[i]==str2[i]){
-            j=1;
+            j++;
         }else{
             j=0;
+            return 0;
         }
         i++;
     }
@@ -145,6 +159,7 @@ int string_match(char *str1, char *str2){
     if(j > 0){
         return 1;
     }
+
 
 }
 
