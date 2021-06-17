@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     char tempStr[MAX];
 
     int i;
-
+ 
     int isValid = 1; //1 is true
     //loop through file
     while ((c=fgetc(filePtr))!= EOF){
