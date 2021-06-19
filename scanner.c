@@ -13,7 +13,7 @@ in_func = INFUNC;
 
 int is_token_or_reserved(char **str, int size) {
     if (is_token(str) != NONE_T) {
-        printf("%s\t\t%s\n", str, str);
+        printf("%-10s%s\n", str, str);
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
@@ -25,7 +25,7 @@ int is_token_or_reserved(char **str, int size) {
 //identif right now is coming back as number of variables. This isn't accurate, but we're close
 int is_identif(char **str, int size) {
     if (is_token(str) == NONE_T) {
-        printf("IDENIT\t\t%s\n", str);
+        printf("%-10s%s\n", "IDENIT", str);
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
@@ -36,7 +36,7 @@ int is_identif(char **str, int size) {
 
 int is_numeric(char **str, int size){
     if (is_num(str) == NUM) {
-        printf("NUMBER\t\t%s\n", str);
+        printf("%-10s%s\n", "NUMBER", str);
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
@@ -140,4 +140,5 @@ void start_scanner(FILE *f) {
         }
 
     }
+    freeStrings(running_str);
 }

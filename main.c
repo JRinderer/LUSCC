@@ -2,6 +2,9 @@
 #include "global_defs.h"
 #include "scanner.h"
 #include "universal_funcs.h"
+#include "parser.h"
+#include "code_gen.h"
+
 
 int main(int argc, char *argv[]) {
     FILE *filePtr;
@@ -71,6 +74,7 @@ int main(int argc, char *argv[]) {
     rewind(filePtr);
 
     start_scanner(filePtr);
+    gen1_code("2");
 
     return 0;
 }
