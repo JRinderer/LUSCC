@@ -1,0 +1,39 @@
+Notes on Assembly and GDB
+
+Using this simple Assembly program we'll learn to debug Assembly:
+
+global _start
+
+section .text
+
+_start:
+    mov rax, 5
+    mov rbx, 8
+    add rax, rbx
+
+    mov rax, 1
+    int 0x80
+
+
+the following starts the GDB system
+    gdb -q -tui ./out
+
+
+once in GDB let's set our assembly flavor to Intel
+    set disassembly-flavor intel
+
+set a break point on _start
+    break _start
+
+
+show the layout of assembly
+    layout asm
+
+show the layout of the registers:
+    show regs
+
+
+Start stepping:
+    step i
+    hit enter to step more
+
