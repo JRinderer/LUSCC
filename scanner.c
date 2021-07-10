@@ -12,11 +12,22 @@ typedef enum {
 in_func = INFUNC;
 
 int is_token_or_reserved(char **str, int size) {
+    char *scan_lne=(char *) malloc(0 * sizeof(char));
+
     if (is_token(str) != NONE_T) {
+        string_assembler_strt(scan_lne,str);
+        string_assembler_strt(scan_lne,"\t\t\t");
+        string_assembler_strt(scan_lne,str);
         printf("%-10s%s\n", str, str);
+        write_ln("test.scn",scan_lne,"a");
+
+        //errors are occuring in populate_table
+        populate_table(str,str);
+
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
+
         return 1;
     }
     return 0;
@@ -24,8 +35,13 @@ int is_token_or_reserved(char **str, int size) {
 
 //identif right now is coming back as number of variables. This isn't accurate, but we're close
 int is_identif(char **str, int size) {
+    char *scan_lne=(char *) malloc(0 * sizeof(char));
     if (is_token(str) == NONE_T) {
+        string_assembler_strt(scan_lne,"IDENIT");
+        string_assembler_strt(scan_lne,"\t\t");
+        string_assembler_strt(scan_lne,str);
         printf("%-10s%s\n", "IDENIT", str);
+        write_ln("test.scn",scan_lne,"a");
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
@@ -35,8 +51,14 @@ int is_identif(char **str, int size) {
 }
 
 int is_numeric(char **str, int size){
+    char *scan_lne=(char *) malloc(0 * sizeof(char));
     if (is_num(str) == NUM) {
+        FILE *scn_file = fopen("test.scn","a");
+        string_assembler_strt(scan_lne,"NUMBER");
+        string_assembler_strt(scan_lne,"\t\t");
+        string_assembler_strt(scan_lne,str);
         printf("%-10s%s\n", "NUMBER", str);
+        write_ln("test.scn",scan_lne,"a");
         freeStrings(str);
         str = (char *) calloc((size + 1), sizeof(char));
         token_types t_type;
@@ -120,6 +142,9 @@ void start_scanner(FILE *f) {
     int buff_size;
     char c;
     int is_numeric=0;
+    FILE *scn_file;
+    scn_file = fopen("test.scn","w");
+    fclose (scn_file);
 
 
     state_type curnt_state = START;
@@ -127,7 +152,10 @@ void start_scanner(FILE *f) {
     //while the state is not DONE
     while (curnt_state != DONE) {
         c = fgetc(f);
-        if (c <=59 && c >=48){
+        if(c <0 || c == EOF || buff_size == EOF){
+            curnt_state = DONE;
+        }
+        else if (c <=59 && c >=48){
             buff_size = stringBuilder(running_str, c);
             buff_size = look_ahead_num(f, running_str);
         }
@@ -135,10 +163,7 @@ void start_scanner(FILE *f) {
             buff_size = stringBuilder(running_str, c);
             buff_size = look_ahead(f, running_str);
         }
-        if (c == EOF || buff_size == EOF) {
-            curnt_state = DONE;
-        }
-
     }
     freeStrings(running_str);
+
 }

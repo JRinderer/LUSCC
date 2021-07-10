@@ -4,6 +4,7 @@
 #include "universal_funcs.h"
 #include "parser.h"
 #include "code_gen.h"
+#include "tables.h"
 
 
 int main(int argc, char *argv[]) {
@@ -74,7 +75,8 @@ int main(int argc, char *argv[]) {
     rewind(filePtr);
 
     start_scanner(filePtr);
-    gen1_code("2");
+    fclose(filePtr);
+    //gen1_code("2");
 
     return 0;
 }

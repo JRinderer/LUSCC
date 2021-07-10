@@ -33,6 +33,24 @@ int stringBuilder(char **strng, char c){
     return size2;
 }
 
+//write a completed line with new line character
+void write_ln(char *pth, char *lne, char *r_w_a){
+    FILE *f = fopen(pth,r_w_a);
+    fprintf(f,"%s\n",lne);
+    fclose(f);
+}
+
+void string_assembler_strt(char **str1, char *str2){
+    int size = strlen(str2);
+    int buff_size;
+    char c;
+
+    for(int i=0;i<size;i++){
+        c = str2[i];
+        buff_size=stringBuilder(str1,c);
+    }
+}
+
 //remember chars in C start at 65 and run to 122
 char_type isLetter(char c){
     int type=NONE_C;
@@ -251,6 +269,14 @@ token_types is_token(char *str){
     match = string_match(str,"void");
     if(match==1){
         return VOID;
+    }
+    match = string_match(str,"input");
+    if(match==1){
+        return INPUT;
+    }
+    match = string_match(str,"output");
+    if(match==1){
+        return OUTPUT;
     }
 
     return t_type;

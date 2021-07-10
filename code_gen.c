@@ -12,21 +12,12 @@
 #include "code_gen.h"
 #include <string.h>
 
-
-void write_ln(FILE *f, char *lne){
-    fprintf(f,"%s\n",lne);
-}
-
-
 void print_header(){
     FILE *file = fopen("out.asm","a");
     write_ln(file, "global\t_start");
     write_ln(file, "section .txt");
+    fclose(file);
 }
-
-
-void print()
-
 
 void gen1_code(char *int_value){
     FILE *file = fopen("out.asm","a");
