@@ -8,7 +8,7 @@ typedef enum {
     START, INASSIGN, INCOMMENT, INNUM, INID, DONE
 } state_type;
 
-
+//
 int is_token_or_reserved(char **str, int size) {
     if (is_token(str) != NONE_T) {
         printf("%s\t\t%s\n", str, str);
