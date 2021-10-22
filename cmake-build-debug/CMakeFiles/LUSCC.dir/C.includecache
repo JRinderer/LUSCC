@@ -6,25 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/jrinder/CLionProjects/LUSCC/global_defs.h
+/Users/johnrinderer/LUSCC/global_defs.h
 stdio.h
 -
 stdlib.h
 -
 
-/home/jrinder/CLionProjects/LUSCC/main.c
-ctype.h
+/Users/johnrinderer/LUSCC/universal_funcs.c
+string.h
 -
 global_defs.h
-/home/jrinder/CLionProjects/LUSCC/global_defs.h
-scanner.h
-/home/jrinder/CLionProjects/LUSCC/scanner.h
-universal_funcs.h
-/home/jrinder/CLionProjects/LUSCC/universal_funcs.h
-
-/home/jrinder/CLionProjects/LUSCC/scanner.h
-global_defs.h
-/home/jrinder/CLionProjects/LUSCC/global_defs.h
-
-/home/jrinder/CLionProjects/LUSCC/universal_funcs.h
+/Users/johnrinderer/LUSCC/global_defs.h
 

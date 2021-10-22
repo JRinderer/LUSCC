@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LUSCC.dir/main.c.o"
   "CMakeFiles/LUSCC.dir/scanner.c.o"
+  "CMakeFiles/LUSCC.dir/universal_funcs.c.o"
   "LUSCC"
   "LUSCC.pdb"
 )

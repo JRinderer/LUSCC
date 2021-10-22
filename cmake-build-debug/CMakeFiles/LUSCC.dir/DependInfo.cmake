@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/jrinder/CLionProjects/LUSCC/main.c" "/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/main.c.o"
-  "/home/jrinder/CLionProjects/LUSCC/scanner.c" "/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/scanner.c.o"
+  "/Users/johnrinderer/LUSCC/main.c" "/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/main.c.o"
+  "/Users/johnrinderer/LUSCC/scanner.c" "/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/scanner.c.o"
+  "/Users/johnrinderer/LUSCC/universal_funcs.c" "/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/universal_funcs.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

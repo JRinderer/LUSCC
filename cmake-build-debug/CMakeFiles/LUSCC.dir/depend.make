@@ -8,5 +8,8 @@ CMakeFiles/LUSCC.dir/main.c.o: ../universal_funcs.h
 
 CMakeFiles/LUSCC.dir/scanner.c.o: ../global_defs.h
 CMakeFiles/LUSCC.dir/scanner.c.o: ../scanner.c
-CMakeFiles/LUSCC.dir/scanner.c.o: ../scanner.h
+CMakeFiles/LUSCC.dir/scanner.c.o: ../universal_funcs.h
+
+CMakeFiles/LUSCC.dir/universal_funcs.c.o: ../global_defs.h
+CMakeFiles/LUSCC.dir/universal_funcs.c.o: ../universal_funcs.c
 

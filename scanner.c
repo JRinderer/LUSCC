@@ -2,7 +2,7 @@
 // Created by jrinder on 5/15/21.
 //
 
-#include "scanner.h"
+#include "universal_funcs.h"
 
 typedef enum {
     START, INASSIGN, INCOMMENT, INNUM, INID, DONE

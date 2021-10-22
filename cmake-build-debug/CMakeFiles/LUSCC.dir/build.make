@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jrinder/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = "/Users/johnrinderer/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = /home/jrinder/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake -E rm -f
+RM = "/Users/johnrinderer/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jrinder/CLionProjects/LUSCC
+CMAKE_SOURCE_DIR = /Users/johnrinderer/LUSCC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jrinder/CLionProjects/LUSCC/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/johnrinderer/LUSCC/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LUSCC.dir/depend.make
@@ -78,43 +78,58 @@ include CMakeFiles/LUSCC.dir/flags.make
 
 CMakeFiles/LUSCC.dir/main.c.o: CMakeFiles/LUSCC.dir/flags.make
 CMakeFiles/LUSCC.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/LUSCC.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LUSCC.dir/main.c.o -c /home/jrinder/CLionProjects/LUSCC/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/LUSCC.dir/main.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LUSCC.dir/main.c.o -c /Users/johnrinderer/LUSCC/main.c
 
 CMakeFiles/LUSCC.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LUSCC.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jrinder/CLionProjects/LUSCC/main.c > CMakeFiles/LUSCC.dir/main.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/johnrinderer/LUSCC/main.c > CMakeFiles/LUSCC.dir/main.c.i
 
 CMakeFiles/LUSCC.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LUSCC.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jrinder/CLionProjects/LUSCC/main.c -o CMakeFiles/LUSCC.dir/main.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/johnrinderer/LUSCC/main.c -o CMakeFiles/LUSCC.dir/main.c.s
 
 CMakeFiles/LUSCC.dir/scanner.c.o: CMakeFiles/LUSCC.dir/flags.make
 CMakeFiles/LUSCC.dir/scanner.c.o: ../scanner.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LUSCC.dir/scanner.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LUSCC.dir/scanner.c.o -c /home/jrinder/CLionProjects/LUSCC/scanner.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LUSCC.dir/scanner.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LUSCC.dir/scanner.c.o -c /Users/johnrinderer/LUSCC/scanner.c
 
 CMakeFiles/LUSCC.dir/scanner.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LUSCC.dir/scanner.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jrinder/CLionProjects/LUSCC/scanner.c > CMakeFiles/LUSCC.dir/scanner.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/johnrinderer/LUSCC/scanner.c > CMakeFiles/LUSCC.dir/scanner.c.i
 
 CMakeFiles/LUSCC.dir/scanner.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LUSCC.dir/scanner.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jrinder/CLionProjects/LUSCC/scanner.c -o CMakeFiles/LUSCC.dir/scanner.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/johnrinderer/LUSCC/scanner.c -o CMakeFiles/LUSCC.dir/scanner.c.s
+
+CMakeFiles/LUSCC.dir/universal_funcs.c.o: CMakeFiles/LUSCC.dir/flags.make
+CMakeFiles/LUSCC.dir/universal_funcs.c.o: ../universal_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/LUSCC.dir/universal_funcs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LUSCC.dir/universal_funcs.c.o -c /Users/johnrinderer/LUSCC/universal_funcs.c
+
+CMakeFiles/LUSCC.dir/universal_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LUSCC.dir/universal_funcs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/johnrinderer/LUSCC/universal_funcs.c > CMakeFiles/LUSCC.dir/universal_funcs.c.i
+
+CMakeFiles/LUSCC.dir/universal_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LUSCC.dir/universal_funcs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/johnrinderer/LUSCC/universal_funcs.c -o CMakeFiles/LUSCC.dir/universal_funcs.c.s
 
 # Object files for target LUSCC
 LUSCC_OBJECTS = \
 "CMakeFiles/LUSCC.dir/main.c.o" \
-"CMakeFiles/LUSCC.dir/scanner.c.o"
+"CMakeFiles/LUSCC.dir/scanner.c.o" \
+"CMakeFiles/LUSCC.dir/universal_funcs.c.o"
 
 # External object files for target LUSCC
 LUSCC_EXTERNAL_OBJECTS =
 
 LUSCC: CMakeFiles/LUSCC.dir/main.c.o
 LUSCC: CMakeFiles/LUSCC.dir/scanner.c.o
+LUSCC: CMakeFiles/LUSCC.dir/universal_funcs.c.o
 LUSCC: CMakeFiles/LUSCC.dir/build.make
 LUSCC: CMakeFiles/LUSCC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable LUSCC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable LUSCC"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LUSCC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +142,6 @@ CMakeFiles/LUSCC.dir/clean:
 .PHONY : CMakeFiles/LUSCC.dir/clean
 
 CMakeFiles/LUSCC.dir/depend:
-	cd /home/jrinder/CLionProjects/LUSCC/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jrinder/CLionProjects/LUSCC /home/jrinder/CLionProjects/LUSCC /home/jrinder/CLionProjects/LUSCC/cmake-build-debug /home/jrinder/CLionProjects/LUSCC/cmake-build-debug /home/jrinder/CLionProjects/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/johnrinderer/LUSCC/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/johnrinderer/LUSCC /Users/johnrinderer/LUSCC /Users/johnrinderer/LUSCC/cmake-build-debug /Users/johnrinderer/LUSCC/cmake-build-debug /Users/johnrinderer/LUSCC/cmake-build-debug/CMakeFiles/LUSCC.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LUSCC.dir/depend
 

@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/LUSCC.dir/main.c.o CMakeFiles/LUSCC.dir/scanner.c.o -o LUSCC 
+/Library/Developer/CommandLineTools/usr/bin/cc -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/LUSCC.dir/main.c.o CMakeFiles/LUSCC.dir/scanner.c.o CMakeFiles/LUSCC.dir/universal_funcs.c.o -o LUSCC 

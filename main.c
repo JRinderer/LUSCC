@@ -1,7 +1,7 @@
 #include <ctype.h>
-#include "global_defs.h"
 #include "scanner.h"
 #include "universal_funcs.h"
+
 
 int main(int argc, char *argv[]) {
     FILE *filePtr;
